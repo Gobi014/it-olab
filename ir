@@ -1,0 +1,26 @@
+const int IRSensor = 8;
+const int LED = 13;
+
+void setup()
+{
+Serial.begin(115200);
+Serial.println("Serial comminucation initialaized");
+pinMode(IRSensor , INPUT);
+pinMode(LED, OUTPUT);
+}
+void loop()
+{
+int sensorstatus=digitalRead(IRSensor);
+if(sensorstatus==HIGH)
+{
+digitalWrite(LED, LOW);
+Serial.println("NO object");
+}
+else
+{
+digitalWrite(LED,HIGH);
+Serial.println("obj");
+}
+delay(100);
+}
+
