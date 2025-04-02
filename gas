@@ -1,0 +1,19 @@
+void setup()
+{
+Serial.begin(9600);
+PinMode(7,OUTPUT);
+PinMode(13, OUTPUT);
+PinMode(A0,INPUT);
+}
+void loop()
+{
+int status=analogRead(A0);
+Serial.println(Status);
+if(status>=400){
+digitalWrite(7,HIGH);
+}
+else{
+digitalWrite(7, LOW);
+}
+delay(200);
+}
